@@ -1,565 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <title>Calculator</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <section class="calc">
-
-    <div class="container">
-      <div class="owl-stage">
-        <div class="owl-item active activated" >
-          <div class="order-item step-one">
-            <span class="step-number">Step 1</span>
-            <h3>Dates and Persons</h3>
-            <div class="input-group">
-              <span class="order-title">Select date: <small>*</small></span>
-              <p>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><g fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M14 22h-4c-3.771 0-5.657 0-6.828-1.172S2 17.771 2 14v-2c0-3.771 0-5.657 1.172-6.828S6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12v2c0 3.771 0 5.657-1.172 6.828c-.653.654-1.528.943-2.828 1.07M7 4V2.5M17 4V2.5M21.5 9H10.75M2 9h3.875"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></g></svg></span>
-                <input class="select-date hasDatepicker" type="text" name="date" id="date" placeholder="dd/mm/yyyy" readonly>
-              </p>
-            </div>
-            <div class="input-group">
-              <span class="order-title">Select time: <small>*</small></span>
-              <p>
-
-                <select id="time" name="time" class="select-time">
-                  <option value="08:00">08:00</option>
-                  <option value="09:00">09:00</option>
-                  <option value="10:00">10:00</option>
-                  <option value="11:00">11:00</option>
-                  <option value="12:00">12:00</option>
-                  <option value="13:00">13:00</option>
-                  <option value="14:00">14:00</option>
-                  <option value="15:00">15:00</option>
-                  <option value="16:00">16:00</option>
-                  <option value="17:00">17:00</option>
-                  <option value="18:00">18:00</option>
-                  <option value="19:00">19:00</option>
-                  <option value="20:00">20:00</option>
-                </select>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M11 8v5h5"/></g></svg></span>
-              </p>
-            </div>
-            <div class="input-group">
-              <span class="order-title">Number of persons: <small>*</small></span>
-              <p>
-                <select class="select-people" name="people">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                </select>
-                <span class="select-span"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="6" r="4"/><path stroke-linecap="round" d="M19.998 18q.002-.246.002-.5c0-2.485-3.582-4.5-8-4.5s-8 2.015-8 4.5S4 22 12 22c2.231 0 3.84-.157 5-.437"/></g></svg></span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="owl-item active" >
-          <div class="order-item step-two">
-            <span>Step 2</span>
-            <h3>Venue Type</h3>
-            <div class="">
-              <span class="order-title">Choose your type <small>*</small></span>
-              <div class="radio-button-group" name="group">
-                <div class="radio-item">
-                  <input id="r1" data-value="44" data-form_types_id="68" value=" Indoor venue = 44" type="radio"
-                    name="type">
-                  <label for="r1" class="checked-first"> Indoor venue</label>
-
-                </div>
-                <div class="radio-item">
-                  <input id="r2" data-value="44" data-form_types_id="69" value="Outdoor pitch = 44" type="radio"
-                    name="type">
-                  <label for="r2" class="">Outdoor pitch</label>
-
-                </div>
-                <div class="radio-item">
-                  <input id="r3" data-value="44" data-form_types_id="70" value="Any which is better = 44" type="radio"
-                    name="type">
-                  <label for="r3" class="">Any which is better</label>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="owl-item active" >
-          <div class="order-item step-three">
-            <span>Step 3</span>
-            <h3>Get something extra</h3>
-            <ul>
-              <li>
-                <input id="extra1" type="checkbox" value="Referee" name="extras[]">
-                <label for="extra1">
-                  <p>Referee</p> (+<span>50</span>€)
-                </label>
-                <div class="tooltip-wrapper" data-tippy-arrow="true"
-                  data-tippy="Looking for someone to make sure everything is according to rules? Hire a referee.<img src=/imgs/referee_1566860617_15722_1566860617_62187.jpg>"
-                  tabindex="0"></div>
-              </li>
-              <li>
-                <input id="extra2" type="checkbox" value="Beer after the game" name="extras[]">
-                <label for="extra2">
-                  <p>Beer after the game</p> (+<span>25</span>€)
-                </label>
-                <div class="tooltip-wrapper" data-tippy-arrow="true"
-                  data-tippy="What a way to celebrate your victory by having a pint of a chilled crafted beer after the game!<img src=/imgs/beer_after_the_game_1566860153_38065_1566860153_58129.jpg>"
-                  tabindex="0"></div>
-              </li>
-              <li>
-                <input id="extra3" type="checkbox" value="12x Souvenir T-shirt" name="extras[]">
-                <label for="extra3">
-                  <p>12x Souvenir T-shirt</p> (+<span>180</span>€)
-                </label>
-                <div class="tooltip-wrapper" data-tippy-arrow="true"
-                  data-tippy="Bestseller! You get a great quality T-shirts with Riga Zorb Football print + it can be a great souvenir to bring home.<img src=/imgs/T-shirt_1566860836_83806_1566860836_89517.jpg>"
-                  tabindex="0"></div>
-              </li>
-              <li>
-                <input id="extra4" type="checkbox" value="4 x Pizzas after the game" name="extras[]">
-                <label for="extra4">
-                  <p>4 x Pizzas after the game</p> (+<span>60</span>€)
-                </label>
-                <div class="tooltip-wrapper" data-tippy-arrow="true"
-                  data-tippy="Don't get back home on an empty stomach. Get yourself 4 best pizzas available in Riga!<img src=/imgs/pizza_1566860887_28302_1566860887_28145.jpg>"
-                  tabindex="0"></div>
-              </li>
-              <li>
-                <input id="extra5" type="checkbox" value="Bubbly for the winning team " name="extras[]">
-                <label for="extra5">
-                  <p>Bubbly for the winning team </p> (+<span>15</span>€)
-                </label>
-                <div class="tooltip-wrapper" data-tippy-arrow="true"
-                  data-tippy="Celebrate your glory with a glass of a first class bubbly!<img src=/imgs/Prosecco_add_on_1566861017_82337_1566861017_12455.jpg>"
-                  tabindex="0"></div>
-              </li>
-              <li>
-                <input id="extra6" type="checkbox" value="10 Electric Shock kits" name="extras[]">
-                <label for="extra6">
-                  <p>10 Electric Shock kits</p> (+<span>150</span>€)
-                </label>
-                <div class="tooltip-wrapper" data-tippy-arrow="true"
-                  data-tippy="Make this game a hilarious one - add electric shockers to each gamer and get a great laugh.<img src=/imgs/electric-shock-football-header_1566898870_27912_1566898870_86996.jpg>"
-                  tabindex="0"></div>
-              </li>
-              <li>
-                <input id="extra7" type="checkbox" value="Foot darts game (extra 1 hour)" name="extras[]">
-                <label for="extra7">
-                  <p>Foot darts game (extra 1 hour)</p> (+<span>250</span>€)
-                </label>
-                <div class="tooltip-wrapper" data-tippy-arrow="true"
-                  data-tippy="Want something more than just zorb football. Order additional 1 hour of Foot darts game and extend the fun.<img src=/imgs/Foot-Darts-extra_1724254569_63112_1724254569_67588.jpg>"
-                  tabindex="0"></div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="owl-item active" >
-          <div class="order-item step-four">
-            <span>Step 4</span>
-            <h3>Order confirmation</h3>
-            <div class="confirm-area">
-              <div>
-                <p>Event date:</p>
-                <p class="set-date">13 September</p>
-              </div>
-              <div>
-                <p>Event time:</p>
-                <p class="set-time">20:00</p>
-              </div>
-              <div>
-                <p>Number of persons:</p>
-                <p class="set-people">1</p>
-              </div>
-              <div>
-                <p>Venue type:</p>
-                <p class="set-type">Indoor venue</p>
-              </div>
-              <div>
-                <p>Optional add-ons:</p>
-                <p class="set-options">
-                  No extra option
+  <body>
+    <section class="calc">
+      <div class="container">
+        <div class="owl-stage">
+          <div class="owl-item active">
+            <div class="order-item step-one">
+              <span class="step-number">Step 1</span>
+              <h3>Dates and Persons</h3>
+              <div class="input-group">
+                <span class="order-title">Select date: <small>*</small></span>
+                <p>
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                    >
+                      <g fill="none">
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-width="1.5"
+                          d="M14 22h-4c-3.771 0-5.657 0-6.828-1.172S2 17.771 2 14v-2c0-3.771 0-5.657 1.172-6.828S6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12v2c0 3.771 0 5.657-1.172 6.828c-.653.654-1.528.943-2.828 1.07M7 4V2.5M17 4V2.5M21.5 9H10.75M2 9h3.875"
+                        />
+                        <path
+                          fill="currentColor"
+                          d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"
+                        />
+                      </g></svg
+                  ></span>
+                  <input
+                    class="select-date hasDatepicker"
+                    type="text"
+                    name="date"
+                    id="date"
+                    placeholder="dd/mm/yyyy"
+                    readonly
+                  />
                 </p>
               </div>
-              <div>
-                <p>Total amount:</p>
-                <p class="total-price">€ <span id="uyut">0</span></p>
+              <div class="input-group">
+                <span class="order-title">Select time: <small>*</small></span>
+                <p>
+                  <select id="time" name="time" class="select-time">
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                  </select>
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M11 8v5h5" />
+                      </g></svg
+                  ></span>
+                </p>
+              </div>
+              <div class="input-group">
+                <span class="order-title"
+                  >Number of persons: <small>*</small></span
+                >
+                <p>
+                  <select class="select-people" name="people">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                  </select>
+                  <span class="select-span"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                    >
+                      <g fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="6" r="4" />
+                        <path
+                          stroke-linecap="round"
+                          d="M19.998 18q.002-.246.002-.5c0-2.485-3.582-4.5-8-4.5s-8 2.015-8 4.5S4 22 12 22c2.231 0 3.84-.157 5-.437"
+                        />
+                      </g></svg
+                  ></span>
+                </p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="owl-item active" >
-          <div class="order-item step-five">
-            <span>Step 5</span>
-            <h3>Checkout&amp;Details</h3>
-            <div class="step5-inputs">
-              <div>
-                <span class="order-title">Your name: <small>*</small></span>
-                <input type="text" id="name1" name="name" placeholder="Everett Miller">
-              </div>
-              <div>
-                <span class="order-title">Phone number: <small>*</small></span>
-                <input class="masked-phone" type="text" name="phone" id="phone1" placeholder="+_______">
-              </div>
-            </div>
-            <div>
-              <span class="order-title">Email address: <small>*</small></span>
-              <input type="email" id="email1" name="email" placeholder="yourmail@domain.com">
-            </div>
-            <div>
-              <span class="order-title">Pick-up address:</span>
-              <input type="text" name="address" id="address1" placeholder="6 Main Ave, Riga">
-            </div>
-            <div class="step5-inputs">
-              <div class="selector-area">
-                <span class="order-title">Payment options:</span>
-                <select name="deposit" id="deposit">
-                  <option value="20" selected="">Deposit Only (20%)</option>
-                  <option value="100">Full Amount (100%)</option>
-                </select>
-                <div class="tooltip-wrapper select-toltip" data-tippy-arrow="true"
-                  data-tippy="Pay everything upfront or just a small deposit and the balance on the day." tabindex="0">
+          <div class="owl-item">
+            <div class="order-item step-two">
+              <span class="step-number">Step 2</span>
+              <h3>Venue Type</h3>
+              <div class="">
+                <span class="order-title"
+                  >Choose your type <small>*</small></span
+                >
+                <div class="radio-button-group" name="group">
+                  <div class="radio-item">
+                    <input
+                      id="r1"
+                      data-value="44"
+                      data-form_types_id="68"
+                      value="Indoor venue"
+                      type="radio"
+                      name="type"
+                    />
+                    <label for="r1" class="checked-first"> Indoor venue</label>
+                  </div>
+                  <div class="radio-item">
+                    <input
+                      id="r2"
+                      data-value="44"
+                      data-form_types_id="69"
+                      value="Outdoor pitch "
+                      type="radio"
+                      name="type"
+                    />
+                    <label for="r2" class="">Outdoor pitch</label>
+                  </div>
+                  <div class="radio-item">
+                    <input
+                      id="r3"
+                      data-value="44"
+                      data-form_types_id="70"
+                      value="Any which is better"
+                      type="radio"
+                      name="type"
+                    />
+                    <label for="r3" class="">Any which is better</label>
+                  </div>
                 </div>
               </div>
-              <div class="total-amount">
-                <span class="order-title">Amount:</span>
-                <p>€ <span id="discount">0</span></p>
+            </div>
+          </div>
+          <div class="owl-item">
+            <div class="order-item step-three">
+              <span class="step-number">Step 3</span>
+              <h3>Get something extra</h3>
+              <ul>
+                <li>
+                  <input
+                    id="extra1"
+                    type="checkbox"
+                    value="Referee"
+                    name="extras[]"
+                    data-group="extras"
+                  />
+                  <label for="extra1">
+                    <p>Referee</p>
+                    (+<span>50</span>€)
+                  </label>
+                  <div
+                    class="tooltip-wrapper"
+                    data-tippy-arrow="true"
+                    data-tippy="Looking for someone to make sure everything is according to rules? Hire a referee.<img src=/imgs/referee_1566860617_15722_1566860617_62187.jpg>"
+                    tabindex="0"
+                  ></div>
+                </li>
+                <li>
+                  <input
+                    id="extra2"
+                    type="checkbox"
+                    value="Beer after the game"
+                    name="extras[]"
+                    data-group="extras"
+                  />
+                  <label for="extra2">
+                    <p>Beer after the game</p>
+                    (+<span>25</span>€)
+                  </label>
+                  <div
+                    class="tooltip-wrapper"
+                    data-tippy-arrow="true"
+                    data-tippy="What a way to celebrate your victory by having a pint of a chilled crafted beer after the game!<img src=/imgs/beer_after_the_game_1566860153_38065_1566860153_58129.jpg>"
+                    tabindex="0"
+                  ></div>
+                </li>
+                <li>
+                  <input
+                    id="extra3"
+                    type="checkbox"
+                    value="12x Souvenir T-shirt"
+                    name="extras[]"
+                    data-group="extras"
+                  />
+                  <label for="extra3">
+                    <p>12x Souvenir T-shirt</p>
+                    (+<span>180</span>€)
+                  </label>
+                  <div
+                    class="tooltip-wrapper"
+                    data-tippy-arrow="true"
+                    data-tippy="Bestseller! You get a great quality T-shirts with Riga Zorb Football print + it can be a great souvenir to bring home.<img src=/imgs/T-shirt_1566860836_83806_1566860836_89517.jpg>"
+                    tabindex="0"
+                  ></div>
+                </li>
+                <li>
+                  <input
+                    id="extra4"
+                    type="checkbox"
+                    value="4 x Pizzas after the game"
+                    name="extras[]"
+                    data-group="extras"
+                  />
+                  <label for="extra4">
+                    <p>4 x Pizzas after the game</p>
+                    (+<span>60</span>€)
+                  </label>
+                  <div
+                    class="tooltip-wrapper"
+                    data-tippy-arrow="true"
+                    data-tippy="Don't get back home on an empty stomach. Get yourself 4 best pizzas available in Riga!<img src=/imgs/pizza_1566860887_28302_1566860887_28145.jpg>"
+                    tabindex="0"
+                  ></div>
+                </li>
+                <li>
+                  <input
+                    id="extra5"
+                    type="checkbox"
+                    value="Bubbly for the winning team "
+                    name="extras[]"
+                    data-group="extras"
+                  />
+                  <label for="extra5">
+                    <p>Bubbly for the winning team</p>
+                    (+<span>15</span>€)
+                  </label>
+                  <div
+                    class="tooltip-wrapper"
+                    data-tippy-arrow="true"
+                    data-tippy="Celebrate your glory with a glass of a first class bubbly!<img src=/imgs/Prosecco_add_on_1566861017_82337_1566861017_12455.jpg>"
+                    tabindex="0"
+                  ></div>
+                </li>
+                <li>
+                  <input
+                    id="extra6"
+                    type="checkbox"
+                    value="10 Electric Shock kits"
+                    name="extras[]"
+                    data-group="extras"
+                  />
+                  <label for="extra6">
+                    <p>10 Electric Shock kits</p>
+                    (+<span>150</span>€)
+                  </label>
+                  <div
+                    class="tooltip-wrapper"
+                    data-tippy-arrow="true"
+                    data-tippy="Make this game a hilarious one - add electric shockers to each gamer and get a great laugh.<img src=/imgs/electric-shock-football-header_1566898870_27912_1566898870_86996.jpg>"
+                    tabindex="0"
+                  ></div>
+                </li>
+                <li>
+                  <input
+                    id="extra7"
+                    type="checkbox"
+                    value="Foot darts game (extra 1 hour)"
+                    name="extras[]"
+                    data-group="extras"
+                  />
+                  <label for="extra7">
+                    <p>Foot darts game (extra 1 hour)</p>
+                    (+<span>250</span>€)
+                  </label>
+                  <div
+                    class="tooltip-wrapper"
+                    data-tippy-arrow="true"
+                    data-tippy="Want something more than just zorb football. Order additional 1 hour of Foot darts game and extend the fun.<img src=/imgs/Foot-Darts-extra_1724254569_63112_1724254569_67588.jpg>"
+                    tabindex="0"
+                  ></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="owl-item">
+            <div class="order-item step-four">
+              <span class="step-number">Step 4</span>
+              <h3>Order confirmation</h3>
+              <div class="confirm-area">
+                <div>
+                  <p>Event date:</p>
+                  <p class="set-date">13 September</p>
+                </div>
+                <div>
+                  <p>Event time:</p>
+                  <p class="set-time">20:00</p>
+                </div>
+                <div>
+                  <p>Number of persons:</p>
+                  <p class="set-people">1</p>
+                </div>
+                <div>
+                  <p>Venue type:</p>
+                  <p class="set-type">Indoor venue</p>
+                </div>
+                <div>
+                  <p>Optional add-ons:</p>
+                  <p class="set-options">No extra option</p>
+                </div>
+                <div>
+                  <p>Total amount:</p>
+                  <p class="total-price" id="total-price">
+                    € <span id="uyut">0</span>
+                  </p>
+                </div>
               </div>
             </div>
-            <p class="terms-conds">
-              <label name="condition">
-                <input type="checkbox" name="gpdr_accept" value="yes" checked="checked">
-                I accept
-                <span class="acception" data-fancybox="" data-src="#gpdr"> Ts&amp;Cs </span>
-                and Privacy Policy
-              </label>
-            </p>
-            <p class="pament-type">
-              <span>We accept</span>
-            </p>
+          </div>
+          <div class="owl-item">
+            <div class="order-item step-five">
+              <span class="step-number">Step 5</span>
+              <h3>Checkout&amp;Details</h3>
+              <div class="step5-inputs">
+                <div>
+                  <span class="order-title">Your name: <small>*</small></span>
+                  <input
+                    type="text"
+                    id="name1"
+                    name="name"
+                    placeholder="Everett Miller"
+                  />
+                </div>
+                <div>
+                  <span class="order-title"
+                    >Phone number: <small>*</small></span
+                  >
+                  <input
+                    class="masked-phone"
+                    type="text"
+                    name="phone"
+                    id="phone1"
+                    placeholder="+_______"
+                  />
+                </div>
+              </div>
+              <div>
+                <span class="order-title">Email address: <small>*</small></span>
+                <input
+                  type="email"
+                  id="email1"
+                  name="email"
+                  placeholder="yourmail@domain.com"
+                />
+              </div>
+              <div>
+                <span class="order-title">Pick-up address:</span>
+                <input
+                  type="text"
+                  name="address"
+                  id="address1"
+                  placeholder="6 Main Ave, Riga"
+                />
+              </div>
+              <div class="step5-inputs">
+                <div class="selector-area">
+                  <span class="order-title">Payment options:</span>
+                  <select name="deposit" id="deposit">
+                    <option value="20" selected="">Deposit Only (20%)</option>
+                    <option value="100">Full Amount (100%)</option>
+                  </select>
+                  <div
+                    class="tooltip-wrapper select-toltip"
+                    data-tippy-arrow="true"
+                    data-tippy="Pay everything upfront or just a small deposit and the balance on the day."
+                    tabindex="0"
+                  ></div>
+                </div>
+                <div class="total-amount">
+                  <span class="order-title">Amount:</span>
+                  <p>€ <span id="total-price">0</span></p>
+                </div>
+              </div>
+              <div class="terms">
+                <input
+                  type="checkbox"
+                  name="gpdr_accept"
+                  value="yes"
+                  checked="checked"
+                  id="terms"
+                />
+                <label for="terms">I accept Ts&amp;Cs and Privacy Policy</label>
+              </div>
+              <div class="pament-type">
+                <span>We accept</span>
+                <ul>
+                  <li>
+                    <img
+                      src="https://rigazorbfootball.com/TPL/zorb/images/visa.jpg"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="https://rigazorbfootball.com/TPL/zorb/images/mastercard.jpg"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="https://rigazorbfootball.com/TPL/zorb/images/paypal.jpg"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="calc_square">
+            <div class="amount__w">
+              <span>Total amount: </span>
+              <div class="amount" id="total-price"></div>
+            </div>
+            <div class="calc_nav">
+              <button id="calc-prev" class="nav">Prev</button>
+              <button id="calc-next" class="nav">Next</button>
+              <button id="calc-submit" class="nav">Send</button>
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
-  </section>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Инициализация Flatpickr
-  flatpickr("#date", {
-    dateFormat: "d/m/Y", // Формат даты
-    defaultDate: "today", // Установить сегодняшнюю дату
-    allowInput: true, // Разрешить ввод вручную
-  });
-
-  // Логика переключения шагов
-  const steps = document.querySelectorAll('.owl-item');
-  let currentStep = 0;
-
-  function updateSteps() {
-    steps.forEach((step, index) => {
-      if (index < currentStep) {
-        step.classList.remove('active');
-        step.classList.add('completed');
-      } else if (index === currentStep) {
-        step.classList.remove('completed');
-        step.classList.add('active');
-      } else {
-        step.classList.remove('active', 'completed');
-      }
-    });
-
-    const container = document.querySelector('.owl-stage');
-    const offset = steps[currentStep].offsetLeft;
-    container.style.transform = `translateX(-${offset}px)`;
-    container.style.transition = 'transform 0.3s ease';
-  }
-
-  const prevButton = document.querySelector('.prev-button');
-  const nextButton = document.querySelector('.next-button');
-
-  prevButton?.addEventListener('click', () => {
-    if (currentStep > 0) {
-      currentStep--;
-      updateSteps();
-    }
-  });
-
-  nextButton?.addEventListener('click', () => {
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      updateSteps();
-    }
-  });
-
-  updateSteps();
-});
-  </script>
-
-  <style>
-
-
-body {
-font-family: Arial, Helvetica, sans-serif;
-}
-    .owl-stage {
-      display: flex;
-      justify-content: flex-start;
-      gap: 2%;
-    }
-
-    .owl-item {
-      width: 20%;
-      border: 2px solid #265128;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-.input-group p {
-  display: flex;
-  align-items: center;
-  border: 1px solid #aaa;
-  height: 40px;
-  position: relative;
-  margin: 0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.order-title {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #424242;
-  display: block;
-}
-
-.input-group p span {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 35px;
-  border: 1px solid #aaa;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.input-group input {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  width: 100%;
-  height: 100%;
-  padding-left: 50px;
-  max-height: 39px;
-  background: transparent;
-}
-.input-group select {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  width: 100%;
-  height: 100%;
-  padding-left: 50px;
-  max-height: 39px;
-  background: transparent;
-}
-
-.radio-item input {
-  display: none;
-}
-
-.radio-item input:checked + label:after {
-  opacity: 1;
-  visibility: visible;
-
-}
-
-.radio-button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.radio-item {
-  display: flex;
-  cursor: pointer;
-  width: 100%;
-  flex-grow: 1;
-}
-.radio-item label {
-  cursor: pointer;
-  box-shadow: 0 0 10px 0 #00000010;
-  padding: 10px 40px;
-  position: relative;
-  width: 100%;
-  font-size: 14px;
-
-}
-
-.radio-item label:after,
-.radio-item label:before
-{
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  width: 10px;
-  height: 10px;
-  transform: translateY(-50%);
-  content: '';
-  border-radius: 100px;
-}
-
-.radio-item label:before {
-  border: 2px solid #424242;
-}
-.radio-item label:after {
-  background-color: #424242;
-  left: 13px;
-  width: 8px;
-  height: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all .3s ease-in-out;
-
-}
-
-.step-three li {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  position: relative;
-  padding-left: 30px;
-}
-
-.step-three li label:after,
-.step-three li label:before
-{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  transform: translateY(-50%);
-  content: '';
-}
-
-.step-three li label:before {
-  border: 2px solid #424242;
-}
-.step-three li label:after {
-  background-color: #424242;
-  left: 3px;
-  width: 8px;
-  height: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all .3s ease-in-out;
-
-}
-
-.step-three li input {
-  display: none;
-}
-
-.step-three li input:checked + label:after {
-  opacity: 1;
-  visibility: visible;
-
-}
-
-.step-three li  p {
-  margin: 0;
-}
-.step-three li label {
-  display: inline-flex;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
-.step-three ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px
-}
-
-.confirm-area {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.confirm-area p {
-  margin: 0;
-}
-.confirm-area > div {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  font-size: 14px;
-}
-
-.step5-inputs {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.step5-inputs div {
-  width: 50%;
-}
-
-.step-five input {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  background: transparent;
-  border: 1px solid #aaa;
-  padding: 10px;
-  width: auto;
-  width: 100%;
-}
-  </style>
-</body>
-
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
